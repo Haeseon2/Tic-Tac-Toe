@@ -1,0 +1,58 @@
+#gameboard
+# a b c
+# d e f
+# g h i
+
+############################# PVP #############################
+board = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"]]
+
+def user1():
+    user1 = input()
+    if user1 == 'a':
+        board[0][0] = "user1"
+    elif user1 == 'b':
+        board[0][1] = "user1"
+    elif user1 == 'c':
+        board[0][2] = "user1"
+    elif user1 == 'd':
+        board[1][0] = "user1"
+    elif user1 == 'e':
+        board[1][1] = "user1"
+    elif user1 == 'f':
+        board[1][2] = "user1"
+    elif user1 == 'g':
+        board[2][0] = "user1"
+    elif user1 == 'h':
+        board[2][1] = "user1"
+    elif user1 == 'i':
+        board[2][2] = "user1"
+    print((user1)+'에 돌을 두었습니다.')
+
+def user2():
+    user2 = input()
+    if user2 == 'a':
+        board[0][0] = "user2"
+    elif user2 == 'b':
+        board[0][1] = "user2"
+    elif user2 == 'c':
+        board[0][2] = "user2"
+    elif user2 == 'd':
+        board[1][0] = "user2"
+    elif user2 == 'e':
+        board[1][1] = "user2"
+    elif user2 == 'f':
+        board[1][2] = "user2"
+    elif user2 == 'g':
+        board[2][0] = "user2"
+    elif user2 == 'h':
+        board[2][1] = "user2"
+    elif user2 == 'i':
+        board[2][2] = "user2"
+    print((user2)+ '에 돌을 두었습니다.')
+
+TF = True
+############################# GAME:PVP #############################
+print('PVP게임을 시작합니다.')
+while TF:
+    user1()
+    user2()
