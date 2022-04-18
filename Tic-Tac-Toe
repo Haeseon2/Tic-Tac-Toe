@@ -4,13 +4,13 @@
 # g h i
 
 ############################# PVP #############################
-board = [['\033[97m'+"a", '\033[97m'+"b", '\033[97m'+"c"],
-         ['\033[97m'+"d", '\033[97m'+"e", '\033[97m'+"f"],
-         ['\033[97m'+"g", '\033[97m'+"h", '\033[97m'+"i"]]
+board = [['\033[37m'+"a", '\033[37m'+"b", '\033[37m'+"c"],
+         ['\033[37m'+"d", '\033[37m'+"e", '\033[37m'+"f"],
+         ['\033[37m'+"g", '\033[37m'+"h", '\033[37m'+"i"]]
 
 #선주자
 def user1():
-    print('\033[93m'+'돌을 둘 곳을 입력하세요.')
+    print('\033[33m'+'돌을 둘 곳을 입력하세요.')
     user1 = input('>> ')
     if user1 == 'a':
         board[0][0] = '\033[96m'+"o"
@@ -30,12 +30,12 @@ def user1():
         board[2][1] = '\033[96m'+"o"
     elif user1 == 'i':
         board[2][2] = '\033[96m'+"o"
-    print('\033[93m'+(user1)+'에 돌을 두었습니다.')
+    print('\033[33m'+(user1)+'에 돌을 두었습니다.')
 
 
 #후주자
 def user2():
-    print('\033[93m'+'돌을 둘 곳을 입력하세요.')
+    print('\033[33m'+'돌을 둘 곳을 입력하세요.')
     user2 = input('>> ')
     if user2 == 'a':
         board[0][0] = '\033[91m'+"x"
@@ -55,7 +55,8 @@ def user2():
         board[2][1] = '\033[91m'+"x"
     elif user2 == 'i':
         board[2][2] = '\033[91m'+"x"
-    print('\033[93m'+(user2)+ '에 돌을 두었습니다.')
+    print('\033[33m'+(user2)+ '에 돌을 두었습니다.')
+
 
 #승리 판단
 def judge():
@@ -63,56 +64,123 @@ def judge():
             and board[0][1] == '\033[96m'+"o" \
             and board[0][2] == '\033[96m'+"o":
         print('\033[92m'+'user1의 승리')
+        return False
 
     elif board[1][0] == '\033[96m'+"o" \
             and board[1][1] == '\033[96m'+"o" \
             and board[1][2] == '\033[96m'+"o":
         print('\033[92m'+'user1의 승리')
+        return False
 
     elif board[2][0] == '\033[96m'+"o" \
             and board[2][1] == '\033[96m'+"o" \
             and board[2][2] == '\033[96m'+"o":
         print('\033[92m'+'user1의 승리')
+        return False
 
     elif board[0][0] == '\033[96m'+"o" \
             and board[1][0] == '\033[96m'+"o" \
             and board[2][0] == '\033[96m'+"o":
         print('\033[92m'+'user1의 승리')
+        return False
 
     elif board[0][1] == '\033[96m'+"o" \
             and board[1][1] == '\033[96m'+"o" \
             and board[2][1] == '\033[96m'+"o":
         print('\033[92m'+'user1의 승리')
+        return False
 
     elif board[2][0] == '\033[96m'+"o" \
             and board[2][1] == '\033[96m'+"o" \
             and board[2][2] == '\033[96m'+"o":
         print('\033[92m'+'user1의 승리')
+        return False
 
     elif board[0][0] == '\033[96m'+"o" \
             and board[1][1] == '\033[96m'+"o" \
             and board[2][2] == '\033[96m'+"o":
         print('\033[92m'+'user1의 승리')
+        return False
 
     elif board[2][0] == '\033[96m'+"o" \
             and board[1][1] == '\033[96m'+"o" \
             and board[0][2] == '\033[96m'+"o":
-        print('\033[92m'+'user1의 승리')
+        print('\033[33m'+'user1의 승리')
+        return False
+
+def judge2():
+    if board[0][0] == '\033[91m'+"x" \
+            and board[0][1] == '\033[91m'+"x" \
+            and board[0][2] == '\033[91m'+"x":
+        print('\033[92m' + 'user2의 승리')
+        return False
+
+    elif board[1][0] == '\033[91m'+"x" \
+            and board[1][1] == '\033[91m'+"x" \
+            and board[1][2] == '\033[91m'+"x":
+        print('\033[92m' + 'user2의 승리')
+        return False
+
+    elif board[2][0] == '\033[91m'+"x" \
+            and board[2][1] == '\033[91m'+"x" \
+            and board[2][2] == '\033[91m'+"x":
+        print('\033[92m' + 'user2의 승리')
+        return False
+
+    elif board[0][0] == '\033[91m'+"x" \
+            and board[1][0] == '\033[91m'+"x" \
+            and board[2][0] == '\033[91m'+"x":
+        print('\033[92m' + 'user2의 승리')
+        return False
+
+    elif board[0][1] == '\033[91m'+"x" \
+            and board[1][1] == '\033[91m'+"x" \
+            and board[2][1] == '\033[91m'+"x":
+        print('\033[92m' + 'user2의 승리')
+        return False
+
+    elif board[2][0] == '\033[91m'+"x" \
+            and board[2][1] == '\033[91m'+"x" \
+            and board[2][2] == '\033[91m'+"x":
+        print('\033[92m' + 'user2의 승리')
+        return False
+
+    elif board[0][0] == '\033[91m'+"x" \
+            and board[1][1] == '\033[91m'+"x" \
+            and board[2][2] == '\033[91m'+"x":
+        print('\033[92m' + 'user2의 승리')
+        return False
+
+    elif board[2][0] == '\033[91m'+"x" \
+            and board[1][1] == '\033[91m'+"x" \
+            and board[0][2] == '\033[91m'+"x":
+        print('\033[33m' + 'user2의 승리')
+        return False
+
+
+
+
+
+    else:
+        pass
+
 
 #판
 def now():
     for f, s, t in board:
         print(f, s, t)
 
+
 TF = True
 ############################# GAME:PVP #############################
-print('\033[93m'+'PVP게임을 시작합니다.')
+print('\033[33m'+'PVP게임을 시작합니다.')
 while TF:
-    judge()
     now()
     user1()
     now()
-    judge()
-    user2()
+    TF = judge()
+    if TF == True:
+        user2()
+        judge2()
 
 # 승패 결정 후 게임이 계속 진행되는 문제
