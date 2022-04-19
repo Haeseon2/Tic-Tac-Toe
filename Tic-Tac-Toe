@@ -108,6 +108,10 @@ def judge():
         print('\033[33m'+'user1의 승리')
         return False
 
+    else:
+        return True
+
+
 def judge2():
     if board[0][0] == '\033[91m'+"x" \
             and board[0][1] == '\033[91m'+"x" \
@@ -157,12 +161,8 @@ def judge2():
         print('\033[33m' + 'user2의 승리')
         return False
 
-
-
-
-
     else:
-        pass
+        return True
 
 
 #판
@@ -176,11 +176,16 @@ TF = True
 print('\033[33m'+'PVP게임을 시작합니다.')
 while TF:
     now()
+    TF = judge2()
+    if TF == True:
+        pass
+    else:
+        break
     user1()
     now()
     TF = judge()
     if TF == True:
-        user2()
-        judge2()
-
-# 승패 결정 후 게임이 계속 진행되는 문제
+        pass
+    else:
+        break
+    user2()
