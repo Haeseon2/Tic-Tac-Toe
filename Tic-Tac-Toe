@@ -9,52 +9,124 @@ board = [['\033[37m'+"a", '\033[37m'+"b", '\033[37m'+"c"],
          ['\033[37m'+"g", '\033[37m'+"h", '\033[37m'+"i"]]
 
 #선주자
-def user1():
+def user1_():
     print('\033[33m'+'돌을 둘 곳을 입력하세요.')
     user1 = input('>> ')
     if user1 == 'a':
-        board[0][0] = '\033[96m'+"o"
+        if board[0][0] != '\033[37m'+"a":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[0][0] = '\033[96m'+"o"
     elif user1 == 'b':
-        board[0][1] = '\033[96m'+"o"
+        if board[0][1] != '\033[37m'+"b":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[0][1] = '\033[96m'+"o"
     elif user1 == 'c':
-        board[0][2] = '\033[96m'+"o"
+        if board[0][2] != '\033[37m'+"c":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[0][2] = '\033[96m'+"o"
     elif user1 == 'd':
-        board[1][0] = '\033[96m'+"o"
+        if board[1][0] != '\033[37m'+"d":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[1][0] = '\033[96m'+"o"
     elif user1 == 'e':
-        board[1][1] = '\033[96m'+"o"
+        if board[1][1] != '\033[37m'+"e":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[1][1] = '\033[96m'+"o"
     elif user1 == 'f':
-        board[1][2] = '\033[96m'+"o"
+        if board[1][2] != '\033[37m'+"f":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[1][2] = '\033[96m'+"o"
     elif user1 == 'g':
-        board[2][0] = '\033[96m'+"o"
+        if board[2][0] != '\033[37m'+"g":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[2][0] = '\033[96m'+"o"
     elif user1 == 'h':
-        board[2][1] = '\033[96m'+"o"
+        if board[2][1] != '\033[37m'+"h":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[2][1] = '\033[96m'+"o"
     elif user1 == 'i':
-        board[2][2] = '\033[96m'+"o"
+        if board[2][2] != '\033[37m'+"i":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user1_()
+        else:
+            board[2][2] = '\033[96m'+"o"
     print('\033[33m'+(user1)+'에 돌을 두었습니다.')
 
 
 #후주자
-def user2():
+def user2_():
     print('\033[33m'+'돌을 둘 곳을 입력하세요.')
     user2 = input('>> ')
     if user2 == 'a':
-        board[0][0] = '\033[91m'+"x"
+        if board[0][0] != '\033[37m'+"a":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[0][0] = '\033[91m'+"x"
     elif user2 == 'b':
-        board[0][1] = '\033[91m'+"x"
+        if board[0][1] != '\033[37m'+"b":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[0][1] = '\033[91m'+"x"
     elif user2 == 'c':
-        board[0][2] = '\033[91m'+"x"
+        if board[0][2] != '\033[37m'+"c":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+           board[0][2] = '\033[91m'+"x"
     elif user2 == 'd':
-        board[1][0] = '\033[91m'+"x"
+        if board[1][0] != '\033[37m'+"d":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[1][0] = '\033[91m'+"x"
     elif user2 == 'e':
-        board[1][1] = '\033[91m'+"x"
+        if board[1][1] != '\033[37m'+"e":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[1][1] = '\033[91m'+"x"
     elif user2 == 'f':
-        board[1][2] = '\033[91m'+"x"
+        if board[1][2] != '\033[37m'+"f":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[1][2] = '\033[91m'+"x"
     elif user2 == 'g':
-        board[2][0] = '\033[91m'+"x"
+        if board[2][0] != '\033[37m'+"g":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[2][0] = '\033[91m'+"x"
     elif user2 == 'h':
-        board[2][1] = '\033[91m'+"x"
+        if board[2][1] != '\033[37m'+"h":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[2][1] = '\033[91m'+"x"
     elif user2 == 'i':
-        board[2][2] = '\033[91m'+"x"
+        if board[2][2] != '\033[37m'+"i":
+            print('이미 돌이 있습니다. 다른 곳에 두세요.')
+            user2_()
+        else:
+            board[2][2] = '\033[91m'+"x"
     print('\033[33m'+(user2)+ '에 돌을 두었습니다.')
 
 
@@ -172,20 +244,89 @@ def now():
 
 
 TF = True
+
+
 ############################# GAME:PVP #############################
 print('\033[33m'+'PVP게임을 시작합니다.')
 while TF:
-    now()
-    TF = judge2()
-    if TF == True:
-        pass
-    else:
-        break
-    user1()
-    now()
-    TF = judge()
-    if TF == True:
-        pass
-    else:
-        break
-    user2()
+        now()
+        TF = judge2()
+        if TF == True:
+            pass
+        else:
+            break
+        user1_()
+        now()
+        TF = judge()
+        if TF == True:
+            pass
+        else:
+            break
+        user2_()
+############################# AI #############################
+
+import random
+
+
+#선주자(Player)
+def player():
+    print('\033[33m'+'돌을 둘 곳을 입력하세요.')
+    player = input('>> ')
+    if player == 'a':
+        board[0][0] = '\033[96m'+"o"
+    elif player == 'b':
+        board[0][1] = '\033[96m'+"o"
+    elif player == 'c':
+        board[0][2] = '\033[96m'+"o"
+    elif player == 'd':
+        board[1][0] = '\033[96m'+"o"
+    elif player == 'e':
+        board[1][1] = '\033[96m'+"o"
+    elif player == 'f':
+        board[1][2] = '\033[96m'+"o"
+    elif player == 'g':
+        board[2][0] = '\033[96m'+"o"
+    elif player == 'h':
+        board[2][1] = '\033[96m'+"o"
+    elif player == 'i':
+        board[2][2] = '\033[96m'+"o"
+    print('\033[33m'+(player)+'에 돌을 두었습니다.')
+
+# board = [['\033[37m'+"a", '\033[37m'+"b", '\033[37m'+"c"],
+#          ['\033[37m'+"d", '\033[37m'+"e", '\033[37m'+"f"],
+#          ['\033[37m'+"g", '\033[37m'+"h", '\033[37m'+"i"]]
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+
+#후주자(AI)
+def AI():
+    ai = random.choice(alphabet)
+    if ai == 'a':
+        board[0][0] = '\033[91m'+"x"
+    elif ai == 'b':
+        board[0][1] = '\033[91m'+"x"
+    elif ai == 'c':
+        board[0][2] = '\033[91m'+"x"
+    elif ai == 'd':
+        board[1][0] = '\033[91m'+"x"
+    elif ai == 'e':
+        board[1][1] = '\033[91m'+"x"
+    elif ai == 'f':
+        board[1][2] = '\033[91m'+"x"
+    elif ai == 'g':
+        board[2][0] = '\033[91m'+"x"
+    elif ai == 'h':
+        board[2][1] = '\033[91m'+"x"
+    elif ai == 'i':
+        board[2][2] = '\033[91m'+"x"
+    print('\033[33m'+(ai)+'에 돌을 두었습니다.')
+
+############################# GAME:AI #############################
+print('\033[33m'+'AI게임을 시작합니다.')
+# while TF:
+#     now()
+#     player()
+#     now()
+#     AI()
+
+#중복수일경우 수를 두지 않는다.
