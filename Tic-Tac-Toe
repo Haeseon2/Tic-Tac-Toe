@@ -2,7 +2,7 @@
 # a b c
 # d e f
 # g h i
-
+import time
 ############################# PVP #############################
 board = [['\033[37m'+"a", '\033[37m'+"b", '\033[37m'+"c"],
          ['\033[37m'+"d", '\033[37m'+"e", '\033[37m'+"f"],
@@ -338,23 +338,50 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
 def AI_():
     ai = random.choice(alphabet)
     if ai == 'a':
-        board[0][0] = '\033[91m'+"x"
+        if board[0][0] != '\033[37m'+"a":
+            AI_()
+        else:
+            board[0][0] = '\033[91m'+"x"
     elif ai == 'b':
-        board[0][1] = '\033[91m'+"x"
+        if board[0][1] != '\033[37m'+"b":
+            AI_()
+        else:
+            board[0][1] = '\033[91m'+"x"
     elif ai == 'c':
-        board[0][2] = '\033[91m'+"x"
+        if board[0][2] != '\033[37m'+"c":
+            AI_()
+        else:
+            board[0][2] = '\033[91m'+"x"
     elif ai == 'd':
-        board[1][0] = '\033[91m'+"x"
+        if board[1][0] != '\033[37m'+"d":
+            AI_()
+        else:
+            board[1][0] = '\033[91m'+"x"
     elif ai == 'e':
-        board[1][1] = '\033[91m'+"x"
+        if board[1][1] != '\033[37m'+"e":
+            AI_()
+        else:
+            board[1][1] = '\033[91m'+"x"
     elif ai == 'f':
-        board[1][2] = '\033[91m'+"x"
+        if board[1][2] != '\033[37m'+"f":
+            AI_()
+        else:
+            board[1][2] = '\033[91m'+"x"
     elif ai == 'g':
-        board[2][0] = '\033[91m'+"x"
+        if board[2][0] != '\033[37m'+"g":
+            AI_()
+        else:
+            board[2][0] = '\033[91m'+"x"
     elif ai == 'h':
-        board[2][1] = '\033[91m'+"x"
+        if board[2][1] != '\033[37m'+"h":
+            AI_()
+        else:
+            board[2][1] = '\033[91m'+"x"
     elif ai == 'i':
-        board[2][2] = '\033[91m'+"x"
+        if board[2][2] != '\033[37m'+"i":
+            AI_()
+        else:
+            board[2][2] = '\033[91m'+"x"
     print('\033[33m'+(ai)+'에 돌을 두었습니다.')
 
 def judge_player():
@@ -403,7 +430,59 @@ def judge_player():
     elif board[2][0] == '\033[96m'+"o" \
             and board[1][1] == '\033[96m'+"o" \
             and board[0][2] == '\033[96m'+"o":
-        print('\033[33m'+'player의 승리')
+        print('\033[93m'+'player의 승리')
+        return False
+
+    else:
+        return True
+
+def judge_ai():
+    if board[0][0] == '\033[91m'+"x" \
+            and board[0][1] == '\033[91m'+"x" \
+            and board[0][2] == '\033[91m'+"x":
+        print('\033[92m'+'AI의 승리')
+        return False
+
+    elif board[1][0] == '\033[91m'+"x"\
+            and board[1][1] == '\033[91m'+"x" \
+            and board[1][2] == '\033[91m'+"x":
+        print('\033[92m'+'AI의 승리')
+        return False
+
+    elif board[2][0] == '\033[91m'+"x" \
+            and board[2][1] == '\033[91m'+"x" \
+            and board[2][2] == '\033[91m'+"x":
+        print('\033[92m'+'AI의 승리')
+        return False
+
+    elif board[0][0] == '\033[91m'+"x" \
+            and board[1][0] == '\033[91m'+"x" \
+            and board[2][0] == '\033[91m'+"x":
+        print('\033[92m'+'AI의 승리')
+        return False
+
+    elif board[0][1] == '\033[91m'+"x" \
+            and board[1][1] == '\033[91m'+"x" \
+            and board[2][1] == '\033[91m'+"x":
+        print('\033[92m'+'AI의 승리')
+        return False
+
+    elif board[2][0] == '\033[91m'+"x" \
+            and board[2][1] == '\033[91m'+"x" \
+            and board[2][2] == '\033[91m'+"x":
+        print('\033[92m'+'AI의 승리')
+        return False
+
+    elif board[0][0] == '\033[91m'+"x" \
+            and board[1][1] == '\033[91m'+"x" \
+            and board[2][2] == '\033[96m'+"o":
+        print('\033[92m'+'AI의 승리')
+        return False
+
+    elif board[2][0] == '\033[96m'+"o" \
+            and board[1][1] == '\033[96m'+"o" \
+            and board[0][2] == '\033[96m'+"o":
+        print('\033[93m'+'AI의 승리')
         return False
 
     else:
@@ -414,11 +493,12 @@ def judge_player():
 
 
 
+
 ############################# GAME:AI #############################
 print('\033[33m'+'AI게임을 시작합니다.')
 while TF:
         now()
-        TF = judge2()
+        TF = judge_ai()
         if TF == True:
             pass
         else:
@@ -431,4 +511,4 @@ while TF:
         else:
             break
         AI_()
-#중복수일경우 수를 두지 않는다.
+        time.sleep(1)
