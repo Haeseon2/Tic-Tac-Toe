@@ -342,47 +342,56 @@ def AI_():
             AI_()
         else:
             board[0][0] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'b':
         if board[0][1] != '\033[37m'+"b":
             AI_()
         else:
             board[0][1] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'c':
         if board[0][2] != '\033[37m'+"c":
             AI_()
         else:
             board[0][2] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'd':
         if board[1][0] != '\033[37m'+"d":
             AI_()
         else:
             board[1][0] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'e':
         if board[1][1] != '\033[37m'+"e":
             AI_()
         else:
             board[1][1] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'f':
         if board[1][2] != '\033[37m'+"f":
             AI_()
         else:
             board[1][2] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'g':
         if board[2][0] != '\033[37m'+"g":
             AI_()
         else:
             board[2][0] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'h':
         if board[2][1] != '\033[37m'+"h":
             AI_()
         else:
             board[2][1] = '\033[91m'+"x"
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
     elif ai == 'i':
         if board[2][2] != '\033[37m'+"i":
             AI_()
         else:
             board[2][2] = '\033[91m'+"x"
-    print('\033[33m'+(ai)+'에 돌을 두었습니다.')
+            print('\033[33m' + (ai) + '에 돌을 두었습니다.')
+
 
 def judge_player():
     if board[0][0] == '\033[96m'+"o" \
@@ -512,3 +521,6 @@ while TF:
             break
         AI_()
         time.sleep(1)
+
+# 이상한 곳에 둘을 두었을 때 다시 두도록 설계.
+# 게임에서 승부가 나지 않을때 자동으로 게임이 종료되도록 설계.
