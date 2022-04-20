@@ -351,6 +351,9 @@ def player_():
             player_()
         else:
             board[2][2] = '\033[96m'+"o"
+    else:
+        print('판에 해당하는 위치에 돌을 두세요.')
+        user1_()
     print('\033[33m'+(player)+'에 돌을 두었습니다.')
 
 
@@ -545,6 +548,10 @@ def AI():
                 break
             AI_()
             time.sleep(0.1)
+            if '\033[37m' + "a" or '\033[37m' + "b" or '\033[37m' + "c" or '\033[37m' + "d" or '\033[37m' + "e" or '\033[37m' + "f" or '\033[37m' + "g" or '\033[37m' + "h" or '\033[37m' + "i" in board:
+                pass
+            else:
+                stop()
 
 
 ############################ LOBBY ############################
