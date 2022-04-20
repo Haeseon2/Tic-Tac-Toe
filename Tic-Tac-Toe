@@ -1,3 +1,4 @@
+
 #gameboard
 # a b c
 # d e f
@@ -247,22 +248,24 @@ TF = True
 
 
 ############################# GAME:PVP #############################
-# print('\033[33m'+'PVP게임을 시작합니다.')
-# while TF:
-#         now()
-#         TF = judge2()
-#         if TF == True:
-#             pass
-#         else:
-#             break
-#         user1_()
-#         now()
-#         TF = judge()
-#         if TF == True:
-#             pass
-#         else:
-#             break
-#         user2_()
+def PVP():
+    global TF
+    print('\033[33m'+'PVP게임을 시작합니다.')
+    while TF:
+            now()
+            TF = judge2()
+            if TF == True:
+                pass
+            else:
+                break
+            user1_()
+            now()
+            TF = judge()
+            if TF == True:
+                pass
+            else:
+                break
+            user2_()
 ############################# AI #############################
 
 import random
@@ -328,9 +331,6 @@ def player_():
             board[2][2] = '\033[96m'+"o"
     print('\033[33m'+(player)+'에 돌을 두었습니다.')
 
-# board = [['\033[37m'+"a", '\033[37m'+"b", '\033[37m'+"c"],
-#          ['\033[37m'+"d", '\033[37m'+"e", '\033[37m'+"f"],
-#          ['\033[37m'+"g", '\033[37m'+"h", '\033[37m'+"i"]]
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
 
@@ -504,23 +504,38 @@ def judge_ai():
 
 
 ############################# GAME:AI #############################
-print('\033[33m'+'AI게임을 시작합니다.')
-while TF:
-        now()
-        TF = judge_ai()
-        if TF == True:
-            pass
-        else:
-            break
-        player_()
-        now()
-        TF = judge_player()
-        if TF == True:
-            pass
-        else:
-            break
-        AI_()
-        time.sleep(1)
+def AI():
+    global TF
+    print('\033[33m'+'AI게임을 시작합니다.')
+    while TF:
+            now()
+            TF = judge_ai()
+            if TF == True:
+                pass
+            else:
+                break
+            player_()
+            now()
+            TF = judge_player()
+            if TF == True:
+                pass
+            else:
+                break
+            AI_()
+            time.sleep(1)
+
+
+############################ LOBBY ############################
+print('\033[36m'+'Tic-Tac-Toe!')
+print('\033[36m'+'원하시는 게임을 선택하여주세요.')
+print('\033[32m'+'''1.PVP
+2.AI''')
+a = int(input())
+if a == 1:
+    PVP()
+elif a == 2:
+    AI()
 
 # 이상한 곳에 둘을 두었을 때 다시 두도록 설계.
 # 게임에서 승부가 나지 않을때 자동으로 게임이 종료되도록 설계.
+# 로비 설계.
