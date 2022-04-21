@@ -162,10 +162,8 @@ o9 = board[2][2] == '\033[91m'+"o"
 def judge():
     if o1:
         if o2 and o3 or o4 and o7 or o5 and o9:
-        elif o4 and o7:
-        elif o5 and o9:
-        print('\033[92m'+'user1의 승리')
-        return False
+            print('\033[92m'+'user1의 승리')
+            return False
 
     elif o4 and o5 and o6:
         print('\033[92m'+'user1의 승리')
@@ -175,21 +173,14 @@ def judge():
         print('\033[92m'+'user1의 승리')
         return False
 
-    # elif o1 and o4 and o7:
-    #     print('\033[92m'+'user1의 승리')
-    #     return False
-
     elif o2 and o5 and o8:
         print('\033[92m'+'user1의 승리')
         return False
 
-    elif o7 and o8 and o9:
+    elif o3 and o6 and o9:
         print('\033[92m'+'user1의 승리')
         return False
 
-    # elif o1 and o5 and o9:
-    #     print('\033[92m'+'user1의 승리')
-    #     return False
 
     elif o7 and o5 and o3:
         print('\033[33m'+'user1의 승리')
@@ -550,4 +541,3 @@ def start():
 
 start()
 
-#엘렐렐레
