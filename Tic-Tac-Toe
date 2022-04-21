@@ -5,15 +5,15 @@
 # g h i
 import time
 ############################# stop #############################
-def stop():
-    print('\033[33m'+'더 이상 둘 수가 없어 게임을 종료합니다.')
-    print('\033[33m'+'다시 하시겠습니까?')
-    print('\033[33m' + 'Y/N')
-    u = input()
-    if u == 'Y' or 'y':
-        start()
-    elif u == 'N' or 'n':
-        pass
+# def stop():
+#     print('\033[33m'+'더 이상 둘 수가 없어 게임을 종료합니다.')
+#     print('\033[33m'+'다시 하시겠습니까?')
+#     print('\033[33m' + 'Y/N')
+#     u = input()
+#     if u == 'Y' or 'y':
+#         start()
+#     elif u == 'N' or 'n':
+#         pass
 
 
 ############################# PVP #############################
@@ -222,9 +222,7 @@ def judge2():
         print('\033[92m' + 'user2의 승리')
         return False
 
-    elif board[0][0] == '\033[91m'+"x" \
-            and board[1][0] == '\033[91m'+"x" \
-            and board[2][0] == '\033[91m'+"x":
+    elif board[0][0] == '\033[91m'+"x" and board[1][0] == '\033[91m'+"x" and board[2][0] == '\033[91m'+"x":
         print('\033[92m' + 'user2의 승리')
         return False
 
@@ -240,9 +238,7 @@ def judge2():
         print('\033[92m' + 'user2의 승리')
         return False
 
-    elif board[0][0] == '\033[91m'+"x" \
-            and board[1][1] == '\033[91m'+"x" \
-            and board[2][2] == '\033[91m'+"x":
+    elif board[0][0] == '\033[91m'+"x" and board[1][1] == '\033[91m'+"x" and board[2][2] == '\033[91m'+"x":
         print('\033[92m' + 'user2의 승리')
         return False
 
@@ -284,10 +280,7 @@ def PVP():
             else:
                 break
             user2_()
-            if '\033[37m' + "a" or '\033[37m' + "b" or '\033[37m' + "c" or '\033[37m' + "d" or '\033[37m' + "e" or '\033[37m' + "f" or '\033[37m' + "g" or '\033[37m' + "h" or '\033[37m' + "i" in board:
-                pass
-            else:
-                stop()
+
 ############################# AI #############################
 
 import random
@@ -548,16 +541,12 @@ def AI():
                 break
             AI_()
             time.sleep(0.1)
-            if '\033[37m' + "a" or '\033[37m' + "b" or '\033[37m' + "c" or '\033[37m' + "d" or '\033[37m' + "e" or '\033[37m' + "f" or '\033[37m' + "g" or '\033[37m' + "h" or '\033[37m' + "i" in board:
-                pass
-            else:
-                stop()
 
 
 ############################ LOBBY ############################
 def start():
     print('\033[36m'+'Tic-Tac-Toe!')
-    print('\033[36m'+'원하시는 게임을 선택하여주세요.')
+    print('\033[36m'+'원하시는 게임을 선택해주세요.')
     print('\033[32m'+'''1.PVP
 2.AI''')
     a = int(input())
