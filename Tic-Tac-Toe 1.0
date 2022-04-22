@@ -148,92 +148,78 @@ def user2_():
         user1_()
     print('\033[33m'+(user2)+ '에 돌을 두었습니다.')
 
-o1 = board[0][0] == '\033[91m'+"o"
-o2 = board[0][1] == '\033[91m'+"o"
-o3 = board[0][2] == '\033[91m'+"o"
-o4 = board[1][0] == '\033[91m'+"o"
-o5 = board[1][1] == '\033[91m'+"o"
-o6 = board[1][2] == '\033[91m'+"o"
-o7 = board[2][0] == '\033[91m'+"o"
-o8 = board[2][1] == '\033[91m'+"o"
-o9 = board[2][2] == '\033[91m'+"o"
 
-#승리 판단
 def judge():
+    o1 = board[0][0] == '\033[96m' + "o"
+    o2 = board[0][1] == '\033[96m' + "o"
+    o3 = board[0][2] == '\033[96m' + "o"
+    o4 = board[1][0] == '\033[96m' + "o"
+    o5 = board[1][1] == '\033[96m' + "o"
+    o6 = board[1][2] == '\033[96m' + "o"
+    o7 = board[2][0] == '\033[96m' + "o"
+    o8 = board[2][1] == '\033[96m' + "o"
+    o9 = board[2][2] == '\033[96m' + "o"
+
     if o1:
-        if o2 and o3 or o4 and o7 or o5 and o9:
+        if (o2 and o3) or \
+                (o4 and o7) or \
+                (o5 and o9):
             print('\033[92m'+'user1의 승리')
             return False
-
-    elif o4 and o5 and o6:
-        print('\033[92m'+'user1의 승리')
-        return False
-
-    elif o7 and o8 and o9:
-        print('\033[92m'+'user1의 승리')
-        return False
 
     elif o2 and o5 and o8:
         print('\033[92m'+'user1의 승리')
         return False
 
-    elif o3 and o6 and o9:
+    elif o4 and o5 and o6:
         print('\033[92m'+'user1의 승리')
         return False
 
-
-    elif o7 and o5 and o3:
-        print('\033[33m'+'user1의 승리')
-        return False
+    elif o7:
+        if (o8 and o9) or \
+                (o5 and o3):
+            print('\033[92m'+'user1의 승리')
+            return False
 
     else:
         return True
 
-T1 = board[0][0] == '\033[91m'+"x"
-T2 = board[0][1] == '\033[91m'+"x"
-T3 = board[0][2] == '\033[91m'+"x"
-T4 = board[1][0] == '\033[91m'+"x"
-T5 = board[1][1] == '\033[91m'+"x"
-T6 = board[1][2] == '\033[91m'+"x"
-T7 = board[2][0] == '\033[91m'+"x"
-T8 = board[2][1] == '\033[91m'+"x"
-T9 = board[2][2] == '\033[91m'+"x"
-
 def judge2():
-    if T1 and T2 and T3:
-        print('\033[92m' + 'user2의 승리')
+    T1 = board[0][0] == '\033[91m' + "x"
+    T2 = board[0][1] == '\033[91m' + "x"
+    T3 = board[0][2] == '\033[91m' + "x"
+    T4 = board[1][0] == '\033[91m' + "x"
+    T5 = board[1][1] == '\033[91m' + "x"
+    T6 = board[1][2] == '\033[91m' + "x"
+    T7 = board[2][0] == '\033[91m' + "x"
+    T8 = board[2][1] == '\033[91m' + "x"
+    T9 = board[2][2] == '\033[91m' + "x"
+
+    if T1:
+        if (T2 and T3) or \
+                (T4 and T7) or \
+                (T5 and T9):
+            print('\033[92m'+'user2의 승리')
+            return False
+
+    elif T2 and T5 and T8:
+        print('\033[92m'+'user2의 승리')
         return False
 
     elif T4 and T5 and T6:
-        print('\033[92m' + 'user2의 승리')
+        print('\033[92m'+'user2의 승리')
         return False
 
-    elif T7 and T8 and T9:
-        print('\033[92m' + 'user2의 승리')
-        return False
-
-    elif T1 and T4 and T7:
-        print('\033[92m' + 'user2의 승리')
-        return False
-
-    elif T2 and T5  and T8:
-        print('\033[92m' + 'user2의 승리')
-        return False
-
-    elif T7 and T8 and T9:
-        print('\033[92m' + 'user2의 승리')
-        return False
-
-    elif T1 and T5 and T9:
-        print('\033[92m' + 'user2의 승리')
-        return False
-
-    elif T7 and T5 and T3:
-        print('\033[33m' + 'user2의 승리')
-        return False
+    elif T7:
+        # T8 T9 중복된 if 문 있었음
+        if (T8 and T9) or \
+                (T5 and T3):
+            print('\033[92m'+'user2의 승리')
+            return False
 
     else:
         return True
+
 
 
 #판
